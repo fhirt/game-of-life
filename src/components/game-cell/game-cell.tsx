@@ -1,4 +1,4 @@
-import { Component, Host, Prop, State, h } from '@stencil/core';
+import { Component, Host, Prop, h } from '@stencil/core';
 
 @Component({
   tag: 'game-cell',
@@ -8,7 +8,7 @@ export class GameCell {
 
   @Prop() cellId: number;
 
-  @State() alive: boolean = false;
+  @Prop() alive: boolean = false;
 
   toggle() {
     this.alive = !this.alive;

@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface GameCell {
+        "alive": boolean;
         "cellId": number;
     }
     interface GameOfLife {
@@ -32,6 +33,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface GameCell {
+        "alive"?: boolean;
         "cellId"?: number;
     }
     interface GameOfLife {

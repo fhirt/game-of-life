@@ -1,3 +1,5 @@
-:host {
-  display: block;
+.game-board {
+    display: flex;
+    border: 1px solid #000;
+    flex-wrap: wrap;
 }

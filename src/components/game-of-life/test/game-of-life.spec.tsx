@@ -1,10 +1,10 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { GameOfLife } from '../game-of-life';
+import { GameOfLifeComponent } from '../game-of-life';
 
 describe('game-of-life', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [GameOfLife],
+      components: [GameOfLifeComponent],
       html: `<game-of-life></game-of-life>`,
     });
     expect(page.root).toEqualHtml(`
