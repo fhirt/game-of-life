@@ -6,56 +6,45 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface GameCell {
+    }
+    interface GameOfLife {
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLGameCellElement extends Components.GameCell, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLGameCellElement: {
+        prototype: HTMLGameCellElement;
+        new (): HTMLGameCellElement;
+    };
+    interface HTMLGameOfLifeElement extends Components.GameOfLife, HTMLStencilElement {
+    }
+    var HTMLGameOfLifeElement: {
+        prototype: HTMLGameOfLifeElement;
+        new (): HTMLGameOfLifeElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "game-cell": HTMLGameCellElement;
+        "game-of-life": HTMLGameOfLifeElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface GameCell {
+    }
+    interface GameOfLife {
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "game-cell": GameCell;
+        "game-of-life": GameOfLife;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "game-cell": LocalJSX.GameCell & JSXBase.HTMLAttributes<HTMLGameCellElement>;
+            "game-of-life": LocalJSX.GameOfLife & JSXBase.HTMLAttributes<HTMLGameOfLifeElement>;
         }
     }
 }
