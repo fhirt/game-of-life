@@ -1,4 +1,16 @@
 export class GameOfLife {
+
+  countPopulation(): number {
+    let count = 0;
+    for (let i = 0; i < this.board.length; i++) {
+      if (this.board[i]) {
+        count++;
+      }
+    }
+    return count;
+  }
+
+
   width: number = 10;
   height: number = 10;
   board: boolean[];
@@ -50,7 +62,7 @@ export class GameOfLife {
   }
 
   public randomize(): void {
-    this.board = this.board.map(() => Math.random() > 0.5);
+    this.board = this.board.map(() => Math.random() > 0.75);
   }
 
   public getBoard(): boolean[] {

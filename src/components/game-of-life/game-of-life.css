@@ -1,3 +1,9 @@
+.game-of-life {
+    display: block;
+    width: 330px;
+    margin: 0 auto;
+}
+
 .game-board {
     display: flex;
     border: 1px solid #000;
